@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == CODE_DRAW_OVER_OTHER_APP_PERMISSION) {
 
             //Check if the permission is granted or not.
-            if (resultCode == Activity.RESULT_OK || Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Settings.canDrawOverlays(this)) {
+            if (resultCode == Activity.RESULT_OK || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Settings.canDrawOverlays(this))) {
                 initializeView()
             } else { //Permission is not available
                 Toast.makeText(
